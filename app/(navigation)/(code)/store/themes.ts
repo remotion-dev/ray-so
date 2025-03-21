@@ -94,6 +94,59 @@ export type Theme = {
 };
 
 export const THEMES: { [index: string]: Theme } = {
+  remotion: {
+    id: "remotion",
+    name: "Remotion",
+    background: {
+      from: "#000000",
+      to: "#000000",
+    },
+    icon: VercelLogo,
+    iconUrl: `${BASE_URL}${VercelLogo.src}`,
+    partner: true,
+    syntax: {
+      light: convertToShikiTheme({
+        // foreground is also used as caret color
+        foreground: "#e1e4e8",
+
+        // Optional properties
+        constant: "#79b8ff",
+        string: "#9ecbff",
+        comment: "#6a737d",
+        keyword: "#f97583",
+        parameter: "#e1e4e8", // From variable.parameter.function
+        function: "#b392f0", // From entity.name
+        stringExpression: "#79b8ff", // From string variable
+        punctuation: "#d1d5da", // From brackethighlighter elements
+        link: "#dbedff", // From constant.other.reference.link
+        number: "#79b8ff", // Using constant color as number isn't explicitly defined
+        property: "#79b8ff", // From meta.property-name
+        highlight: "#ffd33d44", // From editor.findMatchBackground
+        highlightBorder: "#17E5E699", // From editor.wordHighlightBorder
+        highlightHover: "#3392FF44", // From editor.selectionBackground
+      }),
+      dark: convertToShikiTheme({
+        // foreground is also used as caret color
+        foreground: "#e1e4e8",
+
+        // Optional properties
+        constant: "#79b8ff",
+        string: "#9ecbff",
+        comment: "#6a737d",
+        keyword: "#f97583",
+        parameter: "#e1e4e8", // From variable.parameter.function
+        function: "#b392f0", // From entity.name
+        stringExpression: "#79b8ff", // From string variable
+        punctuation: "#d1d5da", // From brackethighlighter elements
+        link: "#dbedff", // From constant.other.reference.link
+        number: "#79b8ff", // Using constant color as number isn't explicitly defined
+        property: "#79b8ff", // From meta.property-name
+        highlight: "#ffd33d44", // From editor.findMatchBackground
+        highlightBorder: "#17E5E699", // From editor.wordHighlightBorder
+        highlightHover: "#3392FF44", // From editor.selectionBackground
+      }),
+    },
+  },
   vercel: {
     id: "vercel",
     name: "Vercel",

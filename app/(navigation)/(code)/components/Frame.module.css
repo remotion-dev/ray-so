@@ -129,7 +129,6 @@
 /* Vercel Theme Frame */
 
 .vercelFrame {
-  background: black;
 }
 
 .vercelFrameLightMode {
@@ -154,6 +153,8 @@
 
 .vercelWindow {
   position: relative;
+  border-radius: 10px;
+  background: #282a36;
 }
 
 .vercelGridlinesHorizontal {

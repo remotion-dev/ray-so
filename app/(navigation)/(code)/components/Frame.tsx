@@ -48,6 +48,29 @@ const VercelFrame = () => {
   );
 };
 
+const RemotionFrame = () => {
+  const [darkMode] = useAtom(darkModeAtom);
+  const [padding] = useAtom(paddingAtom);
+  const [showBackground] = useAtom(showBackgroundAtom);
+
+  return (
+    <div
+      className={classNames(
+        styles.frame,
+        showBackground && styles.vercelFrame,
+        showBackground && !darkMode && styles.vercelFrameLightMode,
+        !showBackground && styles.noBackground,
+      )}
+      style={{ padding }}
+    >
+      {!showBackground && <div data-ignore-in-export className={styles.transparentPattern}></div>}
+      <div className={styles.vercelWindow}>
+        <Editor />
+      </div>
+    </div>
+  );
+};
+
 const SupabaseFrame = () => {
   const [darkMode] = useAtom(darkModeAtom);
   const [padding] = useAtom(paddingAtom);
@@ -313,6 +336,8 @@ const Frame = ({ resize = true }: { resize?: boolean }) => {
       case THEMES.vercel.id:
       case THEMES.rabbit.id:
         return <VercelFrame />;
+      case THEMES.remotion.id:
+        return <RemotionFrame />;
       case THEMES.supabase.id:
         return <SupabaseFrame />;
       case THEMES.tailwind.id:
